@@ -26,14 +26,15 @@ const guestsVip = [
 
 const listOfTypography = guestsVip.map((el, i) => {
     const newList = {
-        tableName: 'Tavolo Vip',
+        tableName: 'Tavolo Vip:',
         guestName: el,
         place: i + 1
     }
     return newList;
 });
 
-console.log(listOfTypography);
+console.log(`
+    Lista da mandare alla tipografia`);
 listOfTypography.forEach((currentEl) => console.log(currentEl.tableName, currentEl.guestName, currentEl.place));
 
 /*
@@ -56,38 +57,67 @@ Id  Name                Grades
 */
 const students = [
     {
-        Id: '213',
-        Name: 'Marco della Rovere',
+        id: '213',
+        name: 'Marco della Rovere',
         Grades: '78',
     },
     {
-        Id: '110',
-        Name: 'Paola Cortellessa',
-        Grades: '96',
+        id: '110',
+        name: 'Paola Cortellessa',
+        grades: '96',
     },
     {
-        Id: '250',
-        Name: 'Andrea Mantegna',
-        Grades: '48',
+        id: '250',
+        name: 'Andrea Mantegna',
+        grades: '48',
     },
     {
-        Id: '145',
-        Name: 'Gaia Borromini',
-        Grades: '74',
+        id: '145',
+        name: 'Gaia Borromini',
+        grades: '74',
     },
     {
-        Id: '196',
-        Name: 'Luigi Grimaldello',
-        Grades: '68',
+        id: '196',
+        name: 'Luigi Grimaldello',
+        grades: '68',
     },
     {
-        Id: '102',
-        Name: 'Piero della Francesca',
-        Grades: '50',
+        id: '102',
+        name: 'Piero della Francesca',
+        grades: '50',
     },
     {
-        Id: '120',
-        Name: 'Francesca da Polenta',
-        Grades: '84',
+        id: '120',
+        name: 'Francesca da Polenta',
+        grades: '84',
     },
 ];
+
+const studentsUpperCase = students.map((el) => {
+    return el.name.toUpperCase();
+})
+
+console.log(`
+    Targhette nomi in maiuscolo`);
+for (let student of studentsUpperCase) {
+
+    console.log(student);
+}
+
+const studentsPlus70 = students.filter((el) => {
+    return el.grades > 70;
+})
+
+console.log(`
+    Studenti con voti superiori a 70`);
+for (let plus70 of studentsPlus70)
+    console.log(plus70.id, plus70.name, plus70.grades);
+
+const studentsGrades70Id120 = students.filter((el) => {
+    return el.grades > 70 && el.id > 120
+});
+
+console.log(`
+    Studenti con voti superiori a 70 e id superiore a 120`);
+for (let best of studentsPlus70)
+    console.log('id:'+best.id,best.name+ ' voto', + best.grades);

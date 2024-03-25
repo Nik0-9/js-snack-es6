@@ -204,7 +204,7 @@ squads.forEach((el) => {
     el.puntiFatti = getRndInteger(1, 99);
     el.falliSubiti = getRndInteger(1, 50);
 });
-console.log(squads);
+for(let squad of squads){console.log(squad)};
 
 const newSquads = squads.map((el) => {
     const squad = {
@@ -213,7 +213,7 @@ const newSquads = squads.map((el) => {
     }
     return squad;
 });
-console.log(newSquads);
+for(let squad of newSquads){console.log(squad)};
 
 
 function getRndInteger(min, max) {

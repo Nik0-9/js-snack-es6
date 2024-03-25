@@ -1,3 +1,5 @@
+
+
 /*
 SNACK 1
 Dwayne Johnson ci ha chiesto di creare i segnaposto per il tavolo degli invitati alla sua mega festa vip.
@@ -122,7 +124,7 @@ console.log(`
 for (let best of studentsPlus70)
     console.log('id:' + best.id, best.name + ' voto', + best.grades);
 
-    console.log('NUOVI SNACK 3 & 4');
+console.log('NUOVI SNACK 3 & 4');
 
 /*
 SNACK 3
@@ -146,11 +148,11 @@ const bicycle = [
     }
 ];
 
-let {name, weight} = bicycle[0];
+let { name, weight } = bicycle[0];
 console.log(name, weight);
 
-for(i=1; i<bicycle.length; i++){
-    if(bicycle[i].weight < weight){
+for (let i = 1; i < bicycle.length; i++) {
+    if (bicycle[i].weight < weight) {
         weight = bicycle[i].weight;
         name = bicycle[i].name;
     }
@@ -164,4 +166,59 @@ Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0
 Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
+
+let squads = [
+    {
+        nome: 'barletta',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nome: 'bari',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nome: 'foggia',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nome: 'brindisi',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nome: 'lecce',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+    {
+        nome: 'taranto',
+        puntiFatti: 0,
+        falliSubiti: 0
+    },
+];
+
+squads.forEach((el) => {
+    el.puntiFatti = getRndInteger(1, 99);
+    el.falliSubiti = getRndInteger(1, 50);
+});
+console.log(squads);
+
+const newSquads = squads.map((el) => {
+    const squad = {
+        nome: el.nome,
+        falliSubiti: el.falliSubiti
+    }
+    return squad;
+});
+console.log(newSquads);
+
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 

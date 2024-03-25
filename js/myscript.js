@@ -134,7 +134,7 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 const bicycle = [
     {
         name: 'pippo',
-        weight: 100
+        weight: 300
     },
     {
         name: 'pluto',
@@ -146,16 +146,16 @@ const bicycle = [
     }
 ];
 
-let lessWeight = bicycle[0].weight;
-let bicycleLessWeight = bicycle[0].name;
+let {name, weight} = bicycle[0];
+console.log(name, weight);
 
 for(i=1; i<bicycle.length; i++){
-    if(lessWeight > bicycle[i].weight){
-        lessWeight = bicycle[i].weight;
-        bicycleLessWeight = bicycle[i].name;
+    if(bicycle[i].weight < weight){
+        weight = bicycle[i].weight;
+        name = bicycle[i].name;
     }
 }
-console.log(`la bici meno pesante è quella di:${bicycleLessWeight}`);
+console.log(`la bici meno pesante è quella di:${name}`);
 
 /*
 SNACK 4

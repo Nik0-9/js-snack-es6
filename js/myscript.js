@@ -120,4 +120,48 @@ const studentsGrades70Id120 = students.filter((el) => {
 console.log(`
     Studenti con voti superiori a 70 e id superiore a 120`);
 for (let best of studentsPlus70)
-    console.log('id:'+best.id,best.name+ ' voto', + best.grades);
+    console.log('id:' + best.id, best.name + ' voto', + best.grades);
+
+    console.log('NUOVI SNACK 3 & 4');
+
+/*
+SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+
+const bicycle = [
+    {
+        name: 'pippo',
+        weight: 100
+    },
+    {
+        name: 'pluto',
+        weight: 600
+    },
+    {
+        name: 'paperino',
+        weight: 200
+    }
+];
+
+let lessWeight = bicycle[0].weight;
+let bicycleLessWeight = bicycle[0].name;
+
+for(i=1; i<bicycle.length; i++){
+    if(lessWeight > bicycle[i].weight){
+        lessWeight = bicycle[i].weight;
+        bicycleLessWeight = bicycle[i].name;
+    }
+}
+console.log(`la bici meno pesante è quella di:${bicycleLessWeight}`);
+
+/*
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+
